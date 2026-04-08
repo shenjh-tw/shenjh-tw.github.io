@@ -58,6 +58,44 @@
             background-color: #e0f5f0;
             color: var(--main-color);
         }
+
+        /* =========================================
+           表格專屬主題配色 (替換原本生硬的 table-dark)
+           ========================================= */
+        .table-theme {
+            border-color: #b0e2d9;
+            /* 配合主色的柔和邊框 */
+        }
+
+        .table-theme thead th {
+            background-color: var(--main-color);
+            /* 表頭背景使用網頁主色 #00AA90 */
+            color: #ffffff;
+            /* 表頭文字改為白色 */
+            border-bottom: 2px solid #008873;
+            /* 加上較深的底線增加立體感 */
+        }
+
+        /* 重新定義斑馬紋 (striped) 的顏色，改為極淡的微綠色 */
+        .table-theme.table-striped>tbody>tr:nth-of-type(odd)>* {
+            background-color: #f0fbf9;
+            color: inherit;
+        }
+
+        .table-theme.table-striped>tbody>tr:nth-of-type(even)>* {
+            background-color: #ffffff;
+        }
+
+        /* 加上滑鼠懸停效果 (Hover) 增加互動感 */
+        .table-theme>tbody>tr:hover>td,
+        .table-theme>tbody>tr:hover>th {
+            /* 針對 Bootstrap 5 的解法：必須同時強制覆蓋背景色與斑馬紋的內陰影 */
+            background-color: #e0f5f0 !important;
+            box-shadow: inset 0 0 0 9999px #e0f5f0 !important;
+
+            /* 順便加個小巧思：讓顏色變化的過程有 0.2 秒的平滑漸變，看起來更高級 */
+            transition: all 0.2s ease;
+        }
     </style>
 </head>
 
@@ -171,8 +209,8 @@
             <div class="tab-pane fade" id="courses" role="tabpanel">
                 <h5 class="section-title">Courses@National United Univ.</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
+                    <table class="table table-bordered table-striped table-theme">
+                        <thead>
                             <tr>
                                 <th>Year/Semester</th>
                                 <th>Courses</th>
@@ -218,8 +256,8 @@
                 </div>
                 <h5 class="section-title">Courses@Asia Univ., 2009-2022</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
+                    <table class="table table-bordered table-striped table-theme">
+                        <thead>
                             <tr>
                                 <th>Year/Semester</th>
                                 <th>Courses</th>
@@ -780,8 +818,8 @@
             <div class="tab-pane fade" id="services" role="tabpanel">
                 <h5 class="section-title">Academic Services (學術服務)</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
+                    <table class="table table-bordered table-striped table-theme">
+                        <thead>
                             <tr>
                                 <th>Year</th>
                                 <th>Academic Services</th>
@@ -991,8 +1029,8 @@
             <div class="tab-pane fade" id="students" role="tabpanel">
                 <h5 class="section-title">Master's Student</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
+                    <table class="table table-bordered table-striped table-theme">
+                        <thead>
                             <tr>
                                 <th>姓名<br>Name</th>
                                 <th>入學年份<br>Admission Year</th>
@@ -1016,8 +1054,8 @@
                 </div>
                 <h5 class="section-title">Master's Graduate</h5>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                        <thead class="table-dark align-top">
+                    <table class="table table-striped table-bordered table-theme">
+                        <thead class="align-top">
                             <tr>
                                 <th>姓名<br>Name</th>
                                 <th>碩士論文題目<br>Thesis</th>
